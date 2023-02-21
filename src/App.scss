@@ -1,4 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Sofia");
+@import url('https://fonts.googleapis.com/css?family=Candal');
 
 .contain {
     width: 100%;
@@ -25,30 +27,6 @@ button {
 
 }
 
-// tr { 
-//     display: block; float: left;
-//     // border: 1px solid black
-//  }
-
-// th, td {
-//      display: block;
-//      border: 1px solid black;
-//      text-align: center; 
-//     }
-
-// tbody {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-around;
-// }
-
-// thead {
-//     border: 1px solid black;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: stretch;
-// }
-
 .inside {
     display: flex;
     margin-top: 60px;
@@ -59,17 +37,31 @@ button {
 
 form {
     display: flex;
-    gap: 20px;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
 table {
-    width: 600px;
+    border:1px solid black;
+  }
 
+td {
+    border:1px solid black;
+    height: 50px;
+  }
+
+th {
+    border:1px solid black;
+    height: 50px;
+  }
+
+.btn {
+    border: 2px solid black;
+    width: 250px;
+    border-radius: 0;
+    display: flex;
+    font-family: Candal;
+    font-weight: 300;
 }
 
-// label{
-//     display: none;
-//   }

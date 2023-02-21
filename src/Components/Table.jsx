@@ -1,10 +1,9 @@
-
 import React, { useState } from "react";
  
  function Table() {
    const [file, setFile] = useState();
    const [array, setArray] = useState([]);
- 
+  
    const fileReader = new FileReader();
  
    const handleOnChange = (e) => {
@@ -13,7 +12,7 @@ import React, { useState } from "react";
  
    const csvFileToArray = string => {
      const csvHeader = string.slice(0, string.indexOf("\n")).split(",");
-     const csvRows = string.slice(string.indexOf("\n") + 1).split("\n");
+     const csvRows = string.slice(string.indexOf("\n")+1).split("\n");
  
      const array = csvRows.map(i => {
        const values = i.split(",");
@@ -40,14 +39,17 @@ import React, { useState } from "react";
      }
    };
  
-  //  const headerKeys = Object.keys(Object.assign({}, ...array));
- 
+   const headerKeys = Object.keys(Object.assign({}, ...array));
+
+   let additional = array.pop();
+   
    return (
      <div style={{ 
       width: '98%',
       height: '98vh',
       textAlign: "center", 
-      border: '1px solid black'
+      border: '1px solid black',
+      marginTop: '6px'
       }}>
        <div style={{
         border: '1px solid black',
@@ -73,23 +75,23 @@ import React, { useState } from "react";
        <div style={{
         fontSize: '40px',
         marginLeft: '496px',
-        fontStyle: 'italic'
+        fontFamily: 'Sofia, sans-serif'
        }}>CSV uploader </div>
        </div>
        <div className="inside">
        <form>
-        {/* <label for="csvFileInput">
-          Select file... */}
-         <input style={{
-          marginLeft: '95px'
+       <label for="files" class="btn">Select file...</label>
+          <input style={{
+          marginLeft: '95px',visibility:'hidden'
          }}
            type={"file"}
-          //  id={"csvFileInput"}
            accept={".csv"}
+           id="files"
            onChange={handleOnChange}
          />
-        {/* </label> */}
-         <button
+         <button style={{
+          fontFamily: 'Candal'
+         }}
            onClick={(e) => {
              handleOnSubmit(e);
            }}
@@ -101,25 +103,25 @@ import React, { useState } from "react";
        <br />
  
        <table style={{
-        border: '1px solid black',
-        display: 'flex'
+        width: '900px',
+        tableLayout: 'fixed' 
        }}>
-         <thead>
-           {/* <tr key={"header"}>
+         <thead style={{
+          backgroundColor: '#9E9E9E',
+          color: 'white'
+         }}>
+           <tr key={"header"}>
              {headerKeys.map((key) => (
                <th>{key}</th>
              ))}
-           </tr> */}
-           {/* <tr > */}
-           <th>Name</th>
-           <th>Email</th>
-           <th>Phone number</th>
-           {/* </tr> */}
+           </tr>
          </thead>
  
          <tbody>
            {array.map((item) => (
-             <tr key={item.id}>
+             <tr key={item.id} style={{
+              backgroundColor: '#E6E6E6'
+             }}>
                {Object.values(item).map((val) => (
                  <td>{val}</td>
                ))}
@@ -131,5 +133,5 @@ import React, { useState } from "react";
      </div>
    );
  }
-
+ 
  export default Table
