@@ -40,7 +40,7 @@ import React, { useState } from "react";
      }
    };
  
-   const headerKeys = Object.keys(Object.assign({}, ...array));
+  //  const headerKeys = Object.keys(Object.assign({}, ...array));
  
    return (
      <div style={{ 
@@ -55,45 +55,64 @@ import React, { useState } from "react";
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'flex-start'
        }}>
         <div style={{
           display: 'flex'
         }}>
-       <div className="oval"></div>
-       <div className="oval"></div>
-       <div className="oval"></div>
+       <div className="oval" style={{
+        backgroundColor: 'green'
+       }}></div>
+       <div className="oval" style={{
+        backgroundColor: 'yellow'
+       }}></div>
+       <div className="oval" style={{
+        backgroundColor: 'crimson'
+       }}> </div>
        </div>
        <div style={{
-        fontSize: '40px'
+        fontSize: '40px',
+        marginLeft: '496px',
+        fontStyle: 'italic'
        }}>CSV uploader </div>
        </div>
+       <div className="inside">
        <form>
+        {/* <label for="csvFileInput">
+          Select file... */}
          <input
            type={"file"}
-           id={"csvFileInput"}
+          //  id={"csvFileInput"}
            accept={".csv"}
            onChange={handleOnChange}
          />
- 
+        {/* </label> */}
          <button
            onClick={(e) => {
              handleOnSubmit(e);
            }}
          >
-           IMPORT CSV
+           Upload
          </button>
        </form>
- 
+       </div>
        <br />
  
-       <table>
+       <table style={{
+        border: '1px solid black',
+        display: 'flex'
+       }}>
          <thead>
-           <tr key={"header"}>
+           {/* <tr key={"header"}>
              {headerKeys.map((key) => (
                <th>{key}</th>
              ))}
-           </tr>
+           </tr> */}
+           {/* <tr > */}
+           <th>Name</th>
+           <th>Email</th>
+           <th>Phone number</th>
+           {/* </tr> */}
          </thead>
  
          <tbody>
