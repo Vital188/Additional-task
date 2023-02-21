@@ -80,7 +80,9 @@ import React, { useState } from "react";
        <form>
         {/* <label for="csvFileInput">
           Select file... */}
-         <input
+         <input style={{
+          marginLeft: '95px'
+         }}
            type={"file"}
           //  id={"csvFileInput"}
            accept={".csv"}
@@ -95,7 +97,7 @@ import React, { useState } from "react";
            Upload
          </button>
        </form>
-       </div>
+       
        <br />
  
        <table style={{
@@ -125,6 +127,7 @@ import React, { useState } from "react";
            ))}
          </tbody>
        </table>
+     </div>
      </div>
    );
  }
