@@ -3,6 +3,7 @@ import React, { useState } from "react";
  function Table() {
    const [file, setFile] = useState();
    const [array, setArray] = useState([]);
+   const [indicator, setIndicator] = useState(0)
   
    const fileReader = new FileReader();
  
@@ -36,8 +37,14 @@ import React, { useState } from "react";
        };
  
        fileReader.readAsText(file);
+       setIndicator(1)
      }
    };
+
+   const handleRemove = () => {
+    setArray([])
+    setIndicator(0)
+   }
  
    const headerKeys = Object.keys(Object.assign({}, ...array));
 
@@ -46,10 +53,11 @@ import React, { useState } from "react";
    return (
      <div style={{ 
       width: '98%',
-      height: '98vh',
+      height: 'auto',
       textAlign: "center", 
       border: '1px solid black',
-      marginTop: '6px'
+      marginTop: '6px',
+      marginBottom: '6px'
       }}>
        <div style={{
         border: '1px solid black',
@@ -129,6 +137,18 @@ import React, { useState } from "react";
            ))}
          </tbody>
        </table>
+       {indicator === 1 ?
+       <button style={{
+          fontFamily: 'Candal',
+          backgroundColor: 'crimson',
+          marginBottom: '10px'
+         }}
+           onClick={() => {
+             handleRemove();
+           }}
+         >
+           Delete
+         </button> : null}
      </div>
      </div>
    );
