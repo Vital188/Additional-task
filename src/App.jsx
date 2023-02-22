@@ -3,14 +3,10 @@ import './App.scss';
 
 function Main() {
 
-   
-    
      return (
-              <div className="contain">          
-                 <Table />
-              </div>
-           
-            
+     <div className="contain">          
+        <Table />
+     </div>     
     )
 }
 export default Main;

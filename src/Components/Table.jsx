@@ -4,11 +4,14 @@ import React, { useState } from "react";
    const [file, setFile] = useState();
    const [array, setArray] = useState([]);
    const [indicator, setIndicator] = useState(0)
+   const [secondColor, setSecondColor] = useState('green');
+   const [thirdColor, setThirdColor] = useState('green')
   
    const fileReader = new FileReader();
  
    const handleOnChange = (e) => {
-     setFile(e.target.files[0]);
+     setFile(e.target.files[0])
+     setSecondColor('yellow');
    };
  
    const csvFileToArray = string => {
@@ -37,13 +40,16 @@ import React, { useState } from "react";
        };
  
        fileReader.readAsText(file);
-       setIndicator(1)
+       setIndicator(1);
+       setThirdColor('crimson');
      }
    };
 
    const handleRemove = () => {
-    setArray([])
-    setIndicator(0)
+    setArray([]);
+    setIndicator(0);
+    setSecondColor('green');
+    setThirdColor('green');
    }
  
    const headerKeys = Object.keys(Object.assign({}, ...array));
@@ -74,10 +80,10 @@ import React, { useState } from "react";
         backgroundColor: 'green'
        }}></div>
        <div className="oval" style={{
-        backgroundColor: 'yellow'
+        backgroundColor: secondColor
        }}></div>
        <div className="oval" style={{
-        backgroundColor: 'crimson'
+        backgroundColor: thirdColor
        }}> </div>
        </div>
        <div style={{

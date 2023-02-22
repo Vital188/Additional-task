@@ -1,23 +1,23 @@
-Project name: simplified Ethereum Staking profit calculator;
-Project prepared only for educational purpose.
+Project name: additional task;
+Project prepared only for educational purpose;
+Project cd = additional task;
 
 In the project directory, you can run:
 
-### `npm start calculator`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
-You can put your input data in calculator:
-1. Initial investment amount of ETH (e.g. 10 ETH);
-2. Yearly staking reward rate in % (8% or 10%);
-3. Staking start date (e.g. 2020-11-10);
-4. Staking duration (e.g. 12,24 or 36 months);
-5. Yes/No option if the customer decides to reinvest staking rewards once they receive them or not (e. g. yes)
+If you want to use CSV uploader, you must to have CSV file with prepared data.
 
-Calculator will generate general information and Staking monthly profit schedule;
+Instructions:
+1. Push input `select file`, and choose you prepared CSV file;
+2. Push button `upload`, and you will see your prepared CSV file data;
+3. If you want upload other CSV data, under table push `delete` button and start uploading process (instruction point `1` and `2`);
 
-You can delete data, transform in Excel or add new.
+Have a nice time !
+
 
 
